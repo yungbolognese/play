@@ -5,7 +5,7 @@
 <title>Daniel Choe, CV</title>
 <style>
   /* Four type styles: name (Inter 800, 46), body (Inter 400, 10.5), bold body (Inter 800, 10.5), label (Inter 400, 8, caps, tracked). */
-  :root { --page: #f2f0ea; --ink: #11110f; --muted: #686761; --module: #d9d7d1; --accent: #ff4f1f;
+  :root { --page: #f2f0ea; --ink: #11110f;
     --sans: Inter, system-ui, "Helvetica Neue", Arial, sans-serif; }
 
   @page { size: Letter; margin: 0; }
@@ -19,31 +19,27 @@
   p { margin: 0; }
   a { color: inherit; text-decoration: none; }
   b { font-weight: 800; }
-  .muted { color: var(--muted); }
 
   h1 { margin: 0; font: 800 46px/1 var(--sans); letter-spacing: -0.035em; }
   .label { font: 400 8px/1.4 var(--sans); letter-spacing: 0.05em; text-transform: uppercase; }
-  .label .num { color: var(--accent); }
 
   .grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 16px; }
   header { padding: 6px 0 28px; }
-  .contact { margin-top: 12px; color: var(--muted); }
+  .contact { margin-top: 12px; }
 
   section { margin-bottom: 28px; }
   .sec > .label { grid-column: 1 / 3; }
   .sec > .body { grid-column: 3 / 7; }
 
   .job { padding: 0 0 20px; break-inside: avoid-page; }
-  .job + .job { border-top: 1px solid #11110f2e; padding-top: 14px; }
+  .job { padding-bottom: 18px; }
   .job .lab { grid-column: 1 / 3; display: grid; gap: 4px; align-content: start; }
   .job .body { grid-column: 3 / 7; }
-  .clients { margin-bottom: 7px; color: var(--muted); }
+  .clients { margin-bottom: 7px; }
   ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
   li { position: relative; padding-left: 11px; }
-  li::before { content: ""; position: absolute; left: 2px; top: 0.58em; width: 3px; height: 3px; border-radius: 50%; background: var(--muted); }
+  li::before { content: ""; position: absolute; left: 2px; top: 0.58em; width: 3px; height: 3px; border-radius: 50%; background: var(--ink); }
 
-  .tile { background: var(--module); border-radius: 4px; padding: 16px 16px 14px; display: grid; gap: 9px; }
-  .tile .row { display: grid; grid-template-columns: 96px 1fr; column-gap: 12px; }
   .pat { display: grid; grid-template-columns: 90px 1fr; column-gap: 12px; margin-bottom: 5px; }
 </style>
 </head>
@@ -56,7 +52,7 @@
 </header>
 
 <section class="grid sec">
-  <div class="label"><span class="num">01</span>&nbsp; Summary</div>
+  <div class="label">Summary</div>
   <div class="body">
     <p>Product designer with 20 years on consumer and enterprise products at Apple, Spotify, Nike, and Shopify. I came up through web design and full-stack development, and I still prototype in code. Right now I'm interested in AI as a design material, beyond its use as a workflow tool.</p>
   </div>
@@ -64,13 +60,13 @@
 
 <section>
   <div class="grid sec" style="margin-bottom:14px">
-    <div class="label"><span class="num">02</span>&nbsp; Experience</div>
+    <div class="label">Experience</div>
   </div>
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Apple</b> <span class="muted">· Cupertino, CA</span></div>
-      <div class="label muted">Mar 2025 – Present</div>
+      <div><b>Apple</b> <span>· Cupertino, CA</span></div>
+      <div class="label">Mar 2025 – Present</div>
       <div>Senior Product Designer, Apple Retail Apps</div>
     </div>
     <div class="body"><ul>
@@ -85,8 +81,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Instrument</b> <span class="muted">· Remote</span></div>
-      <div class="label muted">Nov 2024 – Jan 2025</div>
+      <div><b>Instrument</b> <span>· Remote</span></div>
+      <div class="label">Nov 2024 – Jan 2025</div>
       <div>Product Designer (Contract)</div>
     </div>
     <div class="body"><ul>
@@ -97,8 +93,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Nike</b> <span class="muted">· Remote</span></div>
-      <div class="label muted">Aug 2023 – Apr 2024</div>
+      <div><b>Nike</b> <span>· Remote</span></div>
+      <div class="label">Aug 2023 – Apr 2024</div>
       <div>Senior Product Designer (Contract), Nike Virtual Studios</div>
     </div>
     <div class="body"><ul>
@@ -110,8 +106,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Wish</b> <span class="muted">· Remote</span></div>
-      <div class="label muted">Aug 2022 – Jul 2023</div>
+      <div><b>Wish</b> <span>· Remote</span></div>
+      <div class="label">Aug 2022 – Jul 2023</div>
       <div>Product Design Lead (Contract)</div>
     </div>
     <div class="body"><ul>
@@ -124,8 +120,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Apple</b> <span class="muted">· Cupertino, CA</span></div>
-      <div class="label muted">Oct 2018 – Dec 2021</div>
+      <div><b>Apple</b> <span>· Cupertino, CA</span></div>
+      <div class="label">Oct 2018 – Dec 2021</div>
       <div>Senior Product Designer, Apple TV and Fitness+</div>
     </div>
     <div class="body"><ul>
@@ -137,8 +133,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Spotify</b> <span class="muted">· New York, NY</span></div>
-      <div class="label muted">Apr 2016 – Jul 2017</div>
+      <div><b>Spotify</b> <span>· New York, NY</span></div>
+      <div class="label">Apr 2016 – Jul 2017</div>
       <div>Senior Product Designer</div>
     </div>
     <div class="body"><ul>
@@ -149,8 +145,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Freelance</b> <span class="muted">· New York, NY</span></div>
-      <div class="label muted">Aug 2014 – Sep 2018</div>
+      <div><b>Freelance</b> <span>· New York, NY</span></div>
+      <div class="label">Aug 2014 – Sep 2018</div>
       <div>Product Designer, Independent Consulting</div>
     </div>
     <div class="body">
@@ -164,8 +160,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>SecurityScorecard</b> <span class="muted">· New York, NY</span></div>
-      <div class="label muted">Aug 2014 – May 2015</div>
+      <div><b>SecurityScorecard</b> <span>· New York, NY</span></div>
+      <div class="label">Aug 2014 – May 2015</div>
       <div>VP of Product and UX</div>
     </div>
     <div class="body"><ul>
@@ -177,8 +173,8 @@
 
   <div class="job grid">
     <div class="lab">
-      <div><b>Spotify</b> <span class="muted">· New York, NY</span></div>
-      <div class="label muted">Aug 2013 – Aug 2014</div>
+      <div><b>Spotify</b> <span>· New York, NY</span></div>
+      <div class="label">Aug 2013 – Aug 2014</div>
       <div>Senior Experience Designer</div>
     </div>
     <div class="body"><ul>
@@ -190,24 +186,20 @@
 </section>
 
 <section class="grid sec">
-  <div class="label"><span class="num">03</span>&nbsp; Earlier experience</div>
+  <div class="label">Earlier experience</div>
   <div class="body">
-    <p class="label muted" style="margin-bottom:6px">Gilt Groupe · Brooklyn Academy of Music · Mucca Design · Bumble and bumble</p>
+    <p style="margin-bottom:6px">Gilt Groupe · Brooklyn Academy of Music · Mucca Design · Bumble and bumble</p>
     <p>Early roles in web design, interactive design, and full-stack development (PHP, JavaScript, MySQL). Six years of hands-on engineering work that still shapes how I prototype and work with engineers.</p>
   </div>
 </section>
 
 <section class="grid sec" style="break-inside:avoid">
-  <div class="label"><span class="num">04</span>&nbsp; Skills &amp; tools</div>
-  <div class="body tile">
-    <div class="row"><span class="label muted">Design</span><span>Figma, Sketch, ProtoPie, Adobe Creative Suite, Principle, InVision</span></div>
-    <div class="row"><span class="label muted">Prototyping &amp; development</span><span>Xcode, Swift, SwiftUI, Claude Code, Python, HTML, CSS, JavaScript, PHP, MySQL</span></div>
-    <div class="row"><span class="label muted">Collaboration</span><span>Jira, Confluence, Miro, FigJam, GitHub, Slack</span></div>
-  </div>
+  <div class="label">Prototyping</div>
+  <div class="body">Swift, SwiftUI, Claude Code, Python, HTML, CSS, JavaScript</div>
 </section>
 
 <section class="grid sec" style="break-inside:avoid">
-  <div class="label"><span class="num">05</span>&nbsp; Patents</div>
+  <div class="label">Patents</div>
   <div class="body">
     <div class="pat"><span>US10,747,423</span><span>User Interface for Media Content Playback · Spotify AB · 2020</span></div>
     <div class="pat"><span>USD771695S1</span><span>Display Screen with Graphical User Interface for Security to Reduce Risk · SecurityScorecard · 2016</span></div>
@@ -216,7 +208,7 @@
 </section>
 
 <section class="grid sec" style="break-inside:avoid">
-  <div class="label"><span class="num">06</span>&nbsp; Education</div>
+  <div class="label">Education</div>
   <div class="body edu">
     <div><b>California College of the Arts · 2006</b></div>
     <div>Bachelor of Fine Arts (BFA), Graphic Design</div>
