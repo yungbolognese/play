@@ -2,220 +2,176 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Daniel Choe, CV</title>
+<title>Daniel Choe - Product Designer CV</title>
 <style>
-  /* Four type styles: name (Inter 800, 46), body (Inter 400, 10.5), bold body (Inter 800, 10.5), label (Inter 400, 8, caps, tracked). */
-  :root { --page: #f2f0ea; --ink: #11110f;
-    --sans: Inter, system-ui, "Helvetica Neue", Arial, sans-serif; }
+  /* Three type styles, all Atkinson Hyperlegible (distinct I / l / 1 shapes, which OCR needs): name (bold, 46), body (regular, 10.5), bold body (bold, 10.5).
+     No letter-spacing, no text-transform, one column, so text extraction and OCR read it in order. */
+  @font-face { font-family: "Atkinson CV"; font-weight: 400; src: url("fonts/Atkinson-400.ttf") format("truetype"); }
+  @font-face { font-family: "Atkinson CV"; font-weight: 800; src: url("fonts/Atkinson-700.ttf") format("truetype"); }
 
-  @page { size: Letter; margin: 0; }
-  table.page { width: 100%; border-collapse: collapse; }
-  table.page td { padding: 0; }
-  .sp { height: 40px; }
-  .pad { padding: 0 40px !important; }
+  :root { --ink: #111111; --rule: #11110f2e; }
+  @page { size: Letter; margin: 34px 44px; }
   * { box-sizing: border-box; }
-  html { background: var(--page); color: var(--ink); }
-  body { margin: 0; font: 400 10.5px/1.3 var(--sans); -webkit-font-smoothing: antialiased; }
-  p { margin: 0; }
-  p, li, div { text-wrap: pretty; }
+  html { background: #fff; color: var(--ink); }
+  body { margin: 0; font: 400 10.5px/1.35 "Atkinson CV", Arial, sans-serif; letter-spacing: 0; }
+  p, ul, h1, h2, h3 { margin: 0; }
   a { color: inherit; text-decoration: none; }
-  b { font-weight: 800; }
+  b, h2, h3 { font-weight: 800; }
+  h2, h3 { font-size: 10.5px; line-height: 1.35; }
+  p, li { text-wrap: pretty; }
+  .nw { white-space: nowrap; }
 
-  h1 { margin: 0; font: 800 46px/1 var(--sans); letter-spacing: -0.035em; }
-  .label { font: 400 8px/1.4 var(--sans); letter-spacing: 0.05em; text-transform: uppercase; }
+  h1 { font: 800 46px/1 "Atkinson CV", Arial, sans-serif; letter-spacing: 0; margin-bottom: 12px; }
+  header { margin-bottom: 26px; }
 
-  .grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: 16px; }
-  header { padding: 6px 0 28px; }
-  .contact { margin-top: 12px; }
+  section { margin-bottom: 14px; }
+  h2 { margin-bottom: 7px; }
 
-  section { margin-bottom: 18px; }
-  .sec > .label { grid-column: 1 / 3; }
-  .sec > .body { grid-column: 3 / 7; }
-
-  .job { padding: 0 0 13.8px; break-inside: avoid-page; }
-  .job + .job { border-top: 1px solid #11110f2e; padding-top: 13.8px; }
-  .job .lab { grid-column: 1 / 3; display: grid; gap: 4px; align-content: start; }
-  .job .body { grid-column: 3 / 7; }
+  .job { break-inside: avoid-page; padding: 13.8px 0; border-top: 1px solid var(--rule); }
+  .job:first-of-type { border-top: 0; padding-top: 0; }
+  .job h3 { margin-bottom: 1px; }
+  .job .meta { margin-bottom: 7px; }
   .clients { margin-bottom: 7px; }
-  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 5.5px; }
-  li { position: relative; padding-left: 11px; }
-  li::before { content: ""; position: absolute; left: 2px; top: 0.58em; width: 3px; height: 3px; border-radius: 50%; background: var(--ink); }
 
-  .pat { display: grid; grid-template-columns: 90px 1fr; column-gap: 12px; margin-bottom: 5px; }
+  /* Native list markers (no positioned pseudo-elements) so the PDF stores text in reading order. */
+  ul { list-style: disc outside; padding: 0 0 0 11px; }
+  li { margin-bottom: 5.5px; padding-left: 0; }
+  li:last-child { margin-bottom: 0; }
+  li::marker { content: "\2022  "; font-size: 8px; }
+  .gap { margin-bottom: 5px; }
 </style>
 </head>
 <body>
-<table class="page"><thead><tr><td><div class="sp"></div></td></tr></thead><tfoot><tr><td><div class="sp"></div></td></tr></tfoot><tbody><tr><td class="pad">
 
 <header>
   <h1>Daniel Choe</h1>
-  <div class="contact">Product Designer · San Francisco, CA · <a href="mailto:daniel@helloimdaniel.com">daniel@helloimdaniel.com</a> · <a href="https://helloimdaniel.com">helloimdaniel.com</a> · <a href="https://linkedin.com/in/danieldigitally">linkedin.com/in/danieldigitally</a></div>
+  <p>Product Designer, San Francisco, CA</p>
+  <p><a href="mailto:daniel@helloimdaniel.com">daniel@helloimdaniel.com</a>, <a href="https://helloimdaniel.com">helloimdaniel.com</a>, <a href="https://linkedin.com/in/danieldigitally">linkedin.com/in/danieldigitally</a></p>
 </header>
 
-<section class="grid sec">
-  <div class="label">Summary</div>
-  <div class="body">
-    <p>Product designer for consumer and enterprise products at Apple, Spotify, Nike, and Shopify. I came up through web design and full-stack development, and I still prototype in code. Right now I'm interested in AI as a design material, beyond its use as a workflow tool.</p>
-  </div>
+<section>
+  <h2>Summary</h2>
+  <p>Product designer for consumer and enterprise products at Apple, Spotify, Nike, and Shopify. I came up through web design and full-stack development, and I still prototype in code. Right now I'm interested in AI as a design material, beyond its use as a workflow tool.</p>
 </section>
 
 <section>
-  <div class="grid sec" style="margin-bottom:14px">
-    <div class="label">Experience</div>
-  </div>
+  <h2>Experience</h2>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Apple</b> <span>· Cupertino, CA</span></div>
-      <div class="label">Mar 2025 – Present</div>
-      <div>Senior Product Designer, Apple Retail Apps</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>Apple, Cupertino, CA</h3>
+    <p class="meta">Senior Product Designer, Apple Retail Apps (Mar 2025 - Present)</p>
+    <ul>
       <li>Design an enterprise app that Apple Retail team members and their managers use every day to check their own metrics and plan their growth. It is used across all roles and seniority levels.</li>
       <li>Sole designer on Peer Tips, with one content designer, from first explorations in fall 2025 to launch in March 2026. I cut a library of collections and filters down to a loop: a manager invites, a team member writes, the manager approves, and the tip goes to the store. In the first quarter, 9,429 approved tips were shared and 72% were approved without an edit.</li>
       <li>Led design end to end on Recognition: badges, customer feedback streaks, and a quarterly summary. The main call was where feedback milestones belong. I argued for building them into the streak instead of a separate Accomplishments page, and that version shipped.</li>
       <li>Scope PRDs and make UI decisions from daily input across Product, Operations, and Design.</li>
       <li>Cut UX research synthesis from 3 weeks to 3 days with a Claude Code pipeline that analyzes interview transcripts across retail roles and markets. The team can now iterate on design within the same week.</li>
       <li>Audited the app's UI against iOS 26 Liquid Glass and wrote the engineering specs to update it before the platform transition.</li>
-    </ul></div>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Instrument</b> <span>· Remote</span></div>
-      <div class="label">Nov 2024 – Jan 2025</div>
-      <div>Product Designer (Contract)</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>Instrument, Remote</h3>
+    <p class="meta">Product Designer, Contract (Nov 2024 - Jan 2025)</p>
+    <ul>
       <li>Redesigned booking and location search flows for Avis and Budget at the same time, working within two design systems and two brand identities on one tight timeline.</li>
       <li>Created new components that extend each brand's system and stay consistent with it. They shipped to the client for global rollout.</li>
-    </ul></div>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Nike</b> <span>· Remote</span></div>
-      <div class="label">Aug 2023 – Apr 2024</div>
-      <div>Senior Product Designer (Contract), Nike Virtual Studios</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>Nike, Remote</h3>
+    <p class="meta">Senior Product Designer, Contract, Nike Virtual Studios (Aug 2023 - Apr 2024)</p>
+    <ul>
       <li>Led UX for Nike's digital collectibles marketplace. I owned the Collection and Product Detail Pages and defined the interaction patterns for Nike's first web3 commerce product.</li>
       <li>Designed strategy and explorations for a consolidated .SWOOSH "virtual closet": one space where users switch between game partnerships, show their digital skins and wardrobes, and buy in-game collectibles across titles.</li>
       <li>Presented the virtual closet to executive stakeholders as a long-term marketplace expansion, with proposed integrations for Fortnite, EA FIFA, and NBA 2K.</li>
-    </ul></div>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Wish</b> <span>· Remote</span></div>
-      <div class="label">Aug 2022 – Jul 2023</div>
-      <div>Product Design Lead (Contract)</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>Wish, Remote</h3>
+    <p class="meta">Product Design Lead, Contract (Aug 2022 - Jul 2023)</p>
+    <ul>
       <li>Led design for Flat Rate Shipping across iOS, Android, and web, with the VP of Design, product, engineering, and logistics. Every eligible item ships for $2.99 once an order reaches $10. GMV rose 12% against control, and average transaction value went from $24 to $30.</li>
       <li>The design had to answer three questions: whether a product qualified, whether the cart qualified (and which items didn't), and how much more a shopper needed to spend. 85% of products shipped directly from manufacturers instead of one warehouse, which made each answer harder to give.</li>
       <li>The launch modal moved GMV by less than 1%. I wrote a memo asking who our customers were, which entry points were worth it, and what the data said, and the team widened the scope to the whole shopping journey. The cart toast alone added 2% GMV.</li>
-      <li>After launch, checkout conversion fell once a grouped shipment took 6 days or more. I led Grouped Shipping with logistics and engineering to split items into shipments by delivery speed. It added 1–3% GMV and raised on-time delivery by 2%.</li>
-    </ul></div>
+      <li>After launch, checkout conversion fell once a grouped shipment took 6 days or more. I led Grouped Shipping with logistics and engineering to split items into shipments by delivery speed. It added 1-3% GMV and raised on-time delivery by 2%.</li>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Apple</b> <span>· Cupertino, CA</span></div>
-      <div class="label">Oct 2018 – Dec 2021</div>
-      <div>Senior Product Designer, Apple TV and Fitness+</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>Apple, Cupertino, CA</h3>
+    <p class="meta">Senior Product Designer, Apple TV and Fitness+ (Oct 2018 - Dec 2021)</p>
+    <ul>
       <li>Lead designer for the Apple TV and Fitness+ part of the Editorial Tool, the shared platform that runs content programming across Apple Services.</li>
       <li>Designed for a complex content model: federated and subscription content, licensing, art and content uploads, and market-level variants. Requirements and engineering constraints kept shifting, and editorial teams used the tool daily.</li>
       <li>Designed the iOS companion app from scratch. It extended the tool beyond the desktop and removed a significant operational bottleneck for content teams.</li>
-    </ul></div>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Spotify</b> <span>· New York, NY</span></div>
-      <div class="label">Apr 2016 – Jul 2017</div>
-      <div>Senior Product Designer</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>Spotify, New York, NY</h3>
+    <p class="meta">Senior Product Designer (Apr 2016 - Jul 2017)</p>
+    <ul>
       <li>Redesigned the Free-to-Premium upsell experience and scaled it into a notification and campaign system that supports 30+ languages, multiple stakeholder types, and A/B testing. The work contributed to a 5M+ rise in Premium subscriptions year over year.</li>
-      <li>Led experimental design and user testing for two new ad formats: Skippable Ads on mobile (piloted in Brazil) and Conversational Ads for Google Home, which we tested as&nbsp;the&nbsp;platform&nbsp;launched.</li>
-    </ul></div>
+      <li>Led experimental design and user testing for two new ad formats: Skippable Ads on mobile (piloted in Brazil) and Conversational Ads for Google Home, which we tested as <span class="nw">the platform launched.</span></li>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Freelance</b> <span>· New York, NY</span></div>
-      <div class="label">Aug 2014 – Sep 2018</div>
-      <div>Product Designer, Independent Consulting</div>
-    </div>
-    <div class="body">
-      <div class="clients">Selected clients: Marcus by Goldman Sachs, LearnVest (acq. Northwestern Mutual), AWAY, siggi's, Verizon, Samsung</div>
-      <ul>
-        <li>Shipped the first native iOS and Android app for LearnVest after Northwestern Mutual acquired it. Field Representatives use it to track commissions, monitor annual awards progress, and manage client financial portfolios.</li>
-        <li>Helped mature the product design practice at Marcus by Goldman Sachs as the team moved from agency-built foundations toward an internal design capability. I brought process and craft standards from my work at Spotify.</li>
-      </ul>
-    </div>
+  <div class="job">
+    <h3>Freelance Product Designer, New York, NY</h3>
+    <p class="meta">Independent Consulting (Aug 2014 - Sep 2018)</p>
+    <p class="clients">Selected clients: Marcus by Goldman Sachs, LearnVest (acq. Northwestern Mutual), AWAY, siggi's, Verizon, Samsung</p>
+    <ul>
+      <li>Shipped the first native iOS and Android app for LearnVest after Northwestern Mutual acquired it. Field Representatives use it to track commissions, monitor annual awards progress, and manage client financial portfolios.</li>
+      <li>Helped mature the product design practice at Marcus by Goldman Sachs as the team moved from agency-built foundations toward an internal design capability. I brought process and craft standards from my work at Spotify.</li>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>SecurityScorecard</b> <span>· New York, NY</span></div>
-      <div class="label">Aug 2014 – May 2015</div>
-      <div>VP of Product and UX</div>
-    </div>
-    <div class="body"><ul>
+  <div class="job">
+    <h3>SecurityScorecard, New York, NY</h3>
+    <p class="meta">VP of Product and UX (Aug 2014 - May 2015)</p>
+    <ul>
       <li>Joined as the first design and product leader at an 8-person cybersecurity startup. I managed 2 designers and worked directly with the CEO, COO, and CTO to turn their domain expertise into a product roadmap.</li>
-      <li>Set up a user research practice that informed product direction. Customers grew 3x during&nbsp;my&nbsp;tenure.</li>
+      <li>Set up a user research practice that informed product direction. Customers grew 3x <span class="nw">during my tenure.</span></li>
       <li>Designed and shipped in small iterations alongside engineering, with research, design, and implementation in one tight loop.</li>
-    </ul></div>
+    </ul>
   </div>
 
-  <div class="job grid">
-    <div class="lab">
-      <div><b>Spotify</b> <span>· New York, NY</span></div>
-      <div class="label">Aug 2013 – Aug 2014</div>
-      <div>Senior Experience Designer</div>
-    </div>
-    <div class="body"><ul>
-      <li>Designed and art directed Spotify Landmark, the first in a series of minisites that weave artist and producer commentary into the story behind an album. It launched with&nbsp;Nirvana's&nbsp;Nevermind.</li>
+  <div class="job">
+    <h3>Spotify, New York, NY</h3>
+    <p class="meta">Senior Experience Designer (Aug 2013 - Aug 2014)</p>
+    <ul>
+      <li>Designed and art directed Spotify Landmark, the first in a series of minisites that weave artist and producer commentary into the story behind an album. It launched with <span class="nw">Nirvana's Nevermind.</span></li>
       <li>Art directed the Spotify x Coachella activation: an RFID experience that tracked which sets attendees saw, then generated a personalized playlist and festival map memento on a dedicated minisite.</li>
       <li>Designed the #thatsongwhen campaign with Ogilvy &amp; Mather, a social campaign that tied music to personal memory and ran globally.</li>
-    </ul></div>
+    </ul>
   </div>
 </section>
 
-<section class="grid sec">
-  <div class="label">Earlier experience</div>
-  <div class="body">
-    <p style="margin-bottom:6px">Gilt Groupe · Brooklyn Academy of Music · Mucca Design · Bumble and bumble</p>
-    <p>Early roles in web design, interactive design, and full-stack development (PHP, JavaScript, MySQL). Six years of hands-on engineering work that still shapes how I prototype and work with engineers.</p>
-  </div>
+<section>
+  <h2>Earlier Experience</h2>
+  <p class="gap">Gilt Groupe, Brooklyn Academy of Music, Mucca Design, Bumble and bumble</p>
+  <p>Early roles in web design, interactive design, and full-stack development (PHP, JavaScript, MySQL). Six years of hands-on engineering work that still shapes how I prototype and work with engineers.</p>
 </section>
 
-<section class="grid sec" style="break-inside:avoid">
-  <div class="label">Prototyping</div>
-  <div class="body">Swift, SwiftUI, Claude Code, Python, HTML, CSS, JavaScript</div>
+<section>
+  <h2>Skills</h2>
+  <p>Swift, SwiftUI, Claude Code, Python, HTML, CSS, JavaScript</p>
 </section>
 
-<section class="grid sec" style="break-inside:avoid">
-  <div class="label">Patents</div>
-  <div class="body">
-    <div class="pat"><span>US10,747,423</span><span>User Interface for Media Content Playback · Spotify AB · 2020</span></div>
-    <div class="pat"><span>USD771695S1</span><span>Display Screen with Graphical User Interface for Security to Reduce Risk · SecurityScorecard · 2016</span></div>
-    <div class="pat"><span>USD740847S1</span><span>Display Screen with Graphical User Interface for Security to Reduce Risk · SecurityScorecard · 2015</span></div>
-  </div>
+<section>
+  <h2>Patents</h2>
+  <p class="gap">US10,747,423: User Interface for Media Content Playback, Spotify AB, 2020</p>
+  <p class="gap">USD771695S1: Display Screen with Graphical User Interface for Security to Reduce Risk, SecurityScorecard, 2016</p>
+  <p>USD740847S1: Display Screen with Graphical User Interface for Security to Reduce Risk, SecurityScorecard, 2015</p>
 </section>
 
-<section class="grid sec" style="break-inside:avoid">
-  <div class="label">Education</div>
-  <div class="body edu">
-    <div><b>California College of the Arts · 2006</b></div>
-    <div>Bachelor of Fine Arts (BFA), Graphic Design</div>
-  </div>
+<section>
+  <h2>Education</h2>
+  <p>Bachelor of Fine Arts (BFA), Graphic Design, California College of the Arts, 2006</p>
 </section>
 
-</td></tr></tbody></table>
 </body>
 </html>
